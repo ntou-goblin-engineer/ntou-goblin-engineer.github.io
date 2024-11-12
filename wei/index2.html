@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8" >
+    <title>神奇寶貝介紹</title>
+    <link rel="stylesheet" type="text/css" href="index2.css">
+    <script src="https://kit.fontawesome.com/ae5de2726d.js" crossorigin="anonymous"></script>
+    <script src="index2.js"></script>
+</head>
+<body>
+    <div class="title"id="top">
+        神奇寶貝介紹
+    </div>
+    
+    <div style="display:flex " >
+        <div class="picture">
+            <a href="#first"><img src="picture/picture.png" width="250" height="250" alt="Image 1"/></a>
+        </div>
+        <div style="margin-top: 50px;">
+                <img src="picture/arrow_down.png" width="150" height="150" alt="Arrow"/>
+        </div>
+        <div class="picture">
+            <a href="#second"><img src="picture/picture2.png" width="250" height="250" alt="Image 2"/></a>
+        </div>
+    </div>
+    <div class="title1" >
+        素  質  介  紹
+    </div>
+    <!-- 第一個圖鑑 -->
+    <div class="info-section" id="first">
+        <div class="text-info">
+            <div class="intro">名字: <span><a  style=" color:white"href="https://tw.portal-pokemon.com/play/pokedex/0684" target="_blank">綿綿泡芙</a></span></div>
+            <div class="intro">屬性: <span class="type"><span class="circle-icon"></span>妖精</span></div>
+            <div class="intro">
+                弱點: 
+                <span class="weakness poison">毒</span>
+                <span class="weakness steel">鋼</span>
+            </div>
+        </div>
+        <div class="picture">
+            <a  href="https://tw.portal-pokemon.com/play/pokedex/0684" target="_blank"><img src="picture/picture.png" height="300" width="300" alt="Main Image"/></a>  
+        </div>
+        <div class="text-info">
+            <div class="intro">身高: <span>0.4m</span></div>
+            <div class="intro">體重: <span>3.5kg</span></div>
+            <div class="intro">特性: <span>甜幕</span></div>
+        </div>
+    </div>
+    <table style="margin-bottom: 20px">
+        <tr>
+            <th>名稱</th>
+            <th>HP</th>
+            <th>攻擊</th>
+            <th>防禦</th>
+            <th>特工</th>
+            <th>特防</th>
+            <th>速度</th>
+        </tr>
+        <tr>
+            <td>綿綿泡芙</td>
+            <td>4</td>
+            <td>3</td>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+            <td>3</td>
+        </tr>
+    </table>
+    <div class="container">
+        <div class="header-container">
+            <div class="header-text">圖鑑版本</div>
+            <div class="button-container">
+                <div class="icon-button" onclick="changeText(0, this)"></div>
+                <div class="icon-button" onclick="changeText(1, this)"></div>
+            </div>
+        </div>
+    
+        <div id="text-container" class="text-container">
+            每天要吃掉與自己體重相同重量的砂糖，糖分不夠就會鬧脾氣。
+        </div>
+    </div>
+    
+    <!--  -->
+    <!-- 第二個圖鑑 -->
+    <div class="info-section" id="second">
+        <div class="text-info">
+            <div class="intro">名字: <span><a style="color:white" href="https://tw.portal-pokemon.com/play/pokedex/0685" target="_blank">胖甜妮</a></span></div>
+            <div class="intro">屬性: <span class="type"><span class="circle-icon"></span>妖精</span></div>
+            <div class="intro">
+                弱點: 
+                <span class="weakness poison">毒</span> 
+                <span class="weakness steel">鋼</span>
+            </div>
+        </div>
+        <div class="picture">
+            <a href="https://tw.portal-pokemon.com/play/pokedex/0685" target="_blank"><img src="picture/picture2.png" height="300" width="300" alt="Main Image"/></a>  
+        </div>
+        <div class="text-info">
+            <div class="intro">身高: <span>0.8m</span></div>
+            <div class="intro">體重: <span>5.0kg</span></div>
+            <div class="intro">特性: <span>甜幕</span></div>
+        </div>
+    </div>
+    <table style="margin-bottom: 20px">
+        <tr>
+            <th>名稱</th>
+            <th>HP</th>
+            <th>攻擊</th>
+            <th>防禦</th>
+            <th>特工</th>
+            <th>特防</th>
+            <th>速度</th>
+        </tr>
+        <tr>
+            <td>胖甜妮</td>
+            <td>5</td>
+            <td>5</td>
+            <td>6</td>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <div class="container">
+        <div class="header-container">
+            <div class="header-text">圖鑑版本</div>
+            <div class="button-container">
+                <div class="icon-button" onclick="changeText2(0, this)"></div>
+                <div class="icon-button" onclick="changeText2(1, this)"></div>
+            </div>
+        </div>
+    
+        <div id="text-container2" class="text-container">
+            能從人們身上的氣味裡嗅出他們的身心狀態。在醫療領域的實際應用備受矚目。
+        </div>
+    </div>
+    <!-- --- -->
+    <!-- 表格 -->
+    
+    <!-- 回上一頁 -->
+    <div class="home">
+    <a href="index.html"><i class="fa-solid fa-arrow-left fa-2xl" style="color: #FFD43B;"></i></a>
+    </div>
+    <!--  -->
+    <!-- top -->
+    <div class="top">
+        <a href="#top"><i class="fa-solid fa-house fa-beat fa-2xl" style="color: #B197FC;"></i></a>
+    </div>
+    <!--  -->
+    <!-- 網址 -->
+    <div>
+        參考網址:<a style=" color:aqua"href="https://tw.portal-pokemon.com/play/pokedex" target="_blank">https://tw.portal-pokemon.com/play/pokedex</a>
+    </div>
+    </body>
+</html>
