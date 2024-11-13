@@ -1,3 +1,9 @@
 .wei{
     color: rgb(111, 111, 188);
+    font-size: 25px;
+    font-style:oblique ;
+    font-display:initial ;
+}
+h1{
+    justify-self: center;
 }
