@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8"/>
+    <title>自我介紹</title>
+    <link rel="stylesheet" type="text/css" href="自我介紹.css">
+    <script src="自我介紹.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">自我介紹</div>
+      <div class="info-section">
+        <div class="info-item">
+          姓名: <span>鄒鴻瑋</span>
+        </div>
+        <div class="info-item">
+          系級: <span>資工</span>
+        </div>
+        <div class="info-item">
+          班級: <span>1A</span>
+        </div>
+        <div class="info-item">
+          學號: <span>01357035</span>
+        </div>
+        <div class="info-item">
+          最喜歡的神奇寶貝: <span ><a href="最愛的神奇寶貝.html"><img src="picture/picture.png" height="50" width="50"/>綿綿泡芙</a></span>
+        </div>
+        <div class="info-item">
+          神奇寶貝: <span ><a href="進退化神奇寶貝.html">前往神奇寶貝資訊</a></span>
+        </div>
+        <div class="info-item">
+          作品集: <span ><a href="15puzzle.html">前往作品集</a></span>
+        </div>
+        
+
+      </div>
+    </div>
+    <div style="display: flex;">
+      <div class="box">畫出 flow chart</div>
+      <div class="arrow"></div>
+      <div class="box">設計一個按鈕</div>
+      <div class="arrow"></div>
+      <div class="box">九九乘法表真好玩</div>
+    </div>
+    <button class="styled-button" onclick="nine()">九九乘法表真好玩</button>
+
+  </body>
+</html>

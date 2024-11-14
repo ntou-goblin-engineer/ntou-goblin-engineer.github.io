@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>神奇寶貝</title>
+  <script src="https://kit.fontawesome.com/ae5de2726d.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #e0e0e0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .pokemon-info {
+      background-color: #2a2a2a;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(255, 255, 255, 0.05);
+      text-align: center;
+      width: 500px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #87CEEB;
+      font-size: 24px;
+      margin: 10px 0;
+      margin-bottom: 10px;
+    }
+    
+    #pokemon-name {
+      font-size: 20px;
+      color: #87CEEB;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #pokemon-image {
+      margin-top: 10px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 200px;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+
+    .pokemon-table {
+      margin: 20px auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .pokemon-table th,
+    .pokemon-table td {
+      border: 1px solid #444;
+      padding: 8px;
+      font-size: 14px;
+      color: #f5deb3;
+      transition: background-color 0.3s ease;
+    }
+
+    .pokemon-table th {
+      background-color: #333333;
+      color: #f5deb3;
+    }
+
+    /* 動畫樣式 */
+    .highlight {
+      background-color: #FFD700;
+    }
+
+    button {
+      font-size: 16px;
+      font-weight: bold;
+      color: white;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      background: linear-gradient(135deg, #4caf50, #81c784);
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #388e3c, #66bb6a);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      transform: translateY(-2px);
+    }
+
+    button:active {
+      transform: translateY(1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    .home {
+    position: fixed;
+    bottom: 20px;
+    right: 22px;
+  }
+  table {
+    width: 80%;
+    border-collapse: collapse;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    overflow: hidden; 
+    background-color: #1a1a1a;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+    padding: 14px 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+td {
+    padding: 12px 20px;
+    text-align: center;
+    color: #ccc;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+tr:nth-child(even) {
+    background-color: #2b2b2b;
+}
+
+tr:nth-child(odd) {
+    background-color: #1e1e1e;
+}
+
+tr:hover {
+    background-color: #3e3e3e;
+    transform: scale(1.02); 
+}
+
+td:hover {
+    background-color: rgba(72, 188, 217, 0.3);
+    cursor: pointer;
+}
+
+td:nth-child(1) {
+    font-weight: bold;
+    color: #B197FC;
+}
+  </style>
+</head>
+<body>
+
+<div id="pokemon-section" class="pokemon-info">
+  <h2>神奇寶貝資訊</h2>
+  <img id="pokemon-image" src="/question/picture/picture3.png" alt="神奇寶貝圖片">
+  <h3 id="pokemon-name">四季鹿</h3>
+  
+  <table class="pokemon-table">
+    <tr>
+      <th>屬性</th>
+      <th>值</th>
+    </tr>
+    <tr>
+      <td>HP</td>
+      <td id="pokemon-hp">3</td>
+    </tr>
+    <tr>
+      <td>攻擊</td>
+      <td id="pokemon-attack">3</td>
+    </tr>
+    <tr>
+      <td>防禦</td>
+      <td id="pokemon-defense">2</td>
+    </tr>
+    <tr>
+      <td>特攻</td>
+      <td id="pokemon-bbb">2</td>
+    </tr>
+    <tr>
+      <td>特防</td>
+      <td id="pokemon-aaa">2</td>
+    </tr>
+    <tr>
+      <td>速度</td>
+      <td id="pokemon-speed">4</td>
+    </tr>
+  </table>
+
+  <button onclick="evolve()">進化</button>
+  <button onclick="devolve()">退化</button>
+  </div>
+  <div class="home">
+  <a href="自我介紹.html"><i class="fa-solid fa-arrow-left fa-2xl" style="color: #FFD43B;"></i></a>
+  </div>
+
+<script>
+  const pokemonForms = {
+    base: {
+      name: "四季鹿",
+      image: "/question/picture/picture3.png",
+      stats: { hp: 3, attack: 3, defense: 2, aaa: 2, bbb: 2, ccc: 4 }
+    },
+    evolution: {
+      name: "萌芽鹿",
+      image: "/question/picture/picture4.png",
+      stats: { hp: 3, attack: 5, defense: 3, aaa: 3, bbb: 3, ccc: 5 }
+    }
+  };
+  
+  let currentForm = "base";
+
+  function evolve() {
+    if (currentForm === "base") {
+      currentForm = "evolution";
+      animateImageTransition(pokemonForms.evolution);
+    }
+  }
+
+  function devolve() {
+    if (currentForm === "evolution") {
+      currentForm = "base";
+      animateImageTransition(pokemonForms.base);
+    }
+  }
+
+  function animateImageTransition(form) {
+    const imageElement = document.getElementById("pokemon-image");
+    imageElement.style.opacity = 0;
+
+    setTimeout(() => {
+      updatePokemonInfo(form);
+      imageElement.style.opacity = 1;
+    }, 500);
+  }
+
+  function updatePokemonInfo(form) {
+    document.getElementById("pokemon-name").textContent = form.name;
+    document.getElementById("pokemon-image").src = form.image;
+
+    updateStat("pokemon-hp", form.stats.hp);
+    updateStat("pokemon-attack", form.stats.attack);
+    updateStat("pokemon-defense", form.stats.defense);
+    updateStat("pokemon-bbb", form.stats.bbb);
+    updateStat("pokemon-aaa", form.stats.aaa);
+    updateStat("pokemon-speed", form.stats.ccc);
+  }
+
+  function updateStat(elementId, newValue) {
+    const element = document.getElementById(elementId);
+    if (element.textContent != newValue) {
+      element.textContent = newValue;
+      element.classList.add("highlight");
+      
+      setTimeout(() => {
+        element.classList.remove("highlight");
+      }, 300);
+    }
+  }
+</script>
+
+</body>
+</html>

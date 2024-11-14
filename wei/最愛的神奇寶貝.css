@@ -128,7 +128,6 @@ body {
     background: linear-gradient(135deg, #5e5ea5, #8a8ac7);
 }
 
-/* Container for version switch */
 .container {
     width: 600px;
     height: 200px;
@@ -165,7 +164,7 @@ body {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background-color: #007bff; /* 藍色 */
+    background-color: #007bff; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -175,33 +174,30 @@ body {
     }
     
     .icon-button:hover {
-    background-color: #0056b3; /* 深藍色 */
+    background-color: #0056b3; 
     transform: scale(1.1);
     }
     
     .icon-button.active {
-    background-color: #e74c3c; /* 點擊後的紅色 */
+    background-color: #e74c3c; 
     }
     .text-container {
     width: 600px;
-    /* max-width: 400px; */
     padding: 20px;
     border-radius: 10px;
-    /* background-color: #333; */
     color: #e0e0e0;
-    font-size: 28px; /* 調整字體大小 */
+    font-size: 28px;
     text-align: center;
     transition: opacity 0.3s;
-    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4); */
     }
 
-/* 表格 */
+
 table {
     width: 80%;
     border-collapse: collapse;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     border-radius: 12px;
-    overflow: hidden; /* 防止邊框圓角被遮蓋 */
+    overflow: hidden; 
     background-color: #1a1a1a;
 }
 
