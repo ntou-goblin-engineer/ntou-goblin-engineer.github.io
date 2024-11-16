@@ -1,0 +1,248 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+.clock {
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.clock .digital {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 30px;
+    background: #c9d5e0;
+    box-shadow:
+        20px 20px 20px -10px rgba(0, 0, 0, 0.15),
+        inset 15px 15px 10px rgba(255, 255, 255, 0.5),
+        -15px -15px 35px rgba(255, 255, 255, 0.35),
+        inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+    }
+
+.clock .digital .screen {
+    position: absolute;
+    inset: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #152b4a;
+    border-radius: 20px;
+    box-shadow:
+        5px 5px 15px 0 #152b4a66,
+        inset 5px 5px 5px rgba(255, 255, 255, 0.35),
+        -6px -6px 10px rgba(255, 255, 255, 1);
+}
+
+.clock .digital .screen::before {
+    content: attr(data-text);
+    position: absolute;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+    letter-spacing: 0.1em;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.clock .digital .time {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock .digital .time div {
+    position: relative;
+    font-size: 2.9em;
+    color: var(--clr);
+    letter-spacing: 0.1em;
+    margin-left: 0.1em;
+}
+
+.clock .digital:nth-last-child(2) .time div {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--clr);
+}
+
+.clock .digital:last-child::before {
+    content: "";
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #152b4a;
+    border: 2px solid #fff;
+    z-index: 1000;
+    border-radius: 50%;
+}
+
+.clock .digital:last-child::after {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    background: #152b4a;
+    border-radius: 50%;
+    box-shadow:
+        5px 5px 15px 0 #152b4a66,
+        inset 5px 5px 5px rgba(255, 255, 255, 0.35),
+        -6px -6px 10px rgba(255, 255, 255, 1);
+}
+
+.box {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.box::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 30px;
+    background: var(--clr);
+    border-radius: 4px;
+}
+
+.box:nth-child(1):after {
+    width: 4px;
+    height: 20px;
+}
+
+.box:nth-child(2):after {
+    width: 3px;
+    height: 25px;
+}
+
+#am-pm {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+    color: #333;
+    letter-spacing: 0.1em;
+}
+        body {
+            background-color: #e3f2fd;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        #controls {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #controls button {
+            cursor: pointer;
+            outline: none;
+            padding: 12px 24px;
+            margin: 10px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #42a5f5, #1e88e5);
+            font: bold 16px 'Segoe UI', sans-serif;
+            color: white;
+            text-transform: uppercase;
+            text-shadow: 0 -1px 1px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        #controls button:hover {
+            background: linear-gradient(135deg, #1e88e5, #42a5f5);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        #controls button:active {
+            transform: translateY(3px);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        #puzzle {
+            position: relative;
+            width: 240px;
+            height: 242px;
+            margin: 0 auto;
+            margin-top: 30px;
+            border: 10px solid #1e88e5;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            background-color: #ffffff;
+        }
+
+        #puzzle span {
+            position: absolute;
+            display: block;
+            width: 78px;
+            height: 78px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        #puzzle span.number {
+            cursor: pointer;
+            font: bold 36px 'Segoe UI', sans-serif;
+            text-align: center;
+            line-height: 78px;
+            color: #ffffff;
+        }
+
+        #puzzle span.empty {
+            background: transparent;
+        }
+
+        #puzzle span.number.light {
+            background-color: #4fc3f7;
+        }
+
+        #puzzle span.number.dark {
+            background-color: #29b6f6;
+        }
+
+        #puzzle.animate span {
+            transition: 0.3s left, 0.3s top;
+        }
+    .fint{
+        background-color:#4db9eb  ;
+        border-radius: 10px;
+        width: 100px;
+        height: 40px;
+        align-content: center;
+        padding-left: 20px;
+        text-shadow:  0 0 5px #00ffea,   
+        0 0 10px #00ffea,  
+        0 0 20px #00ffea, 
+        /* 0 0 30px #00ffea,  */
+        /* 0 0 40px #00ffea,  */
+        /* 0 0 50px #00ffea,  */
+        0 0 60px #00ffea;
+        font-size: larger;
+        -webkit-text-stroke: 0.5px #ffffff;
+        font-weight: bolder;
+        margin-top:10px;
+        
+    }
+    .fint:hover{
+        transform: scale(1.05);
+        box-shadow:0 8px 15px #152b4a66;
+        background: linear-gradient(135deg,#367897 ,#58b8e4);
+    }
+    .home{
+        position: fixed;
+        right:20px;
+        bottom:10px;
+      }

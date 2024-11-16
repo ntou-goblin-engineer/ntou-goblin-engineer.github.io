@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+/* 通用設定 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* 深色背景 */
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh; /* 全螢幕高度 */
+}
+
+.block {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    background: black;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.5s ease; /* 整體動畫過渡效果 */
+}
+
+.block h1 {
+    position: relative;
+    z-index: 2; /* 讓文字顯示在漸層上層 */
+}
+
+/* 滑鼠懸停效果 */
+.block:hover {
+    color: black; /* 文字變黑，與金色漸層對比 */
+}
+
+.block::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(45deg, #ffd700, #ff9900); /* 金色漸層 */
+    z-index: 1;
+    transform: translateX(-100%); /* 初始位置：完全遮擋在外部 */
+    transition: transform 0.5s ease-in-out; /* 平滑滑動動畫 */
+}
+
+.block:hover::before {
+    transform: translateX(0); /* 滑鼠懸停時滑入漸層效果 */
+}
+
+.block.left:hover::before {
+    transform: translateX(0); /* 從左到右滑入 */
+}
+
+.block.right:hover::before {
+    transform: translateX(0); /* 從右到左滑入 */
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="block left" onclick="location.href='searchbar.html';">
+            <h1>search bar</h1>
+        </div>
+        <div class="block right" onclick="location.href='15puzzle.html';">
+            <h1>9puzzle</h1>
+        </div>
+    </div>
+</body>
+</html>

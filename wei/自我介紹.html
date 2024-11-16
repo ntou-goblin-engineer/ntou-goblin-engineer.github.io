@@ -8,7 +8,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script type="module">
       import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
-      mermaid.initialize({ startOnLoad: true });
     </script>
   </head>
   <body>
@@ -34,18 +33,17 @@
           神奇寶貝: <span ><a href="進退化神奇寶貝.html">前往神奇寶貝資訊</a></span>
         </div>
         <div class="info-item">
-          作品集: <span ><a href="15puzzle.html">前往作品集</a></span>
+          作品集: <span ><a href="show.html">前往作品集</a></span>
         </div>
         
 
       </div>
     </div>
-    <div style="display: flex;">
-      <div class="box">畫出 flow chart</div>
-      <div class="arrow"></div>
-      <div class="box">設計一個按鈕</div>
-      <div class="arrow"></div>
-      <div class="box">九九乘法表真好玩</div>
+    <div class="mermaid" style="width: 700px; height: 500px; margin-bottom:0px ;padding-bottom: 0px;">
+      flowchart LR
+      A([按下按鈕]) -->|進入for迴圈| B([判斷奇數or偶數])
+      B --> |若為奇數| C{print出順序 1~9}
+      B --> |若為偶數| D{print出順序 9~1}
     </div>
     <button class="styled-button" onclick="nine()">九九乘法表真好玩</button>
 

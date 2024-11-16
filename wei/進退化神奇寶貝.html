@@ -159,7 +159,7 @@ td:nth-child(1) {
 
 <div id="pokemon-section" class="pokemon-info">
   <h2>神奇寶貝資訊</h2>
-  <img id="pokemon-image" src="/question/picture/picture3.png" alt="神奇寶貝圖片">
+  <img id="pokemon-image" src="picture/picture3.png" alt="神奇寶貝圖片">
   <h3 id="pokemon-name">四季鹿</h3>
   
   <table class="pokemon-table">
@@ -204,65 +204,69 @@ td:nth-child(1) {
   const pokemonForms = {
     base: {
       name: "四季鹿",
-      image: "/question/picture/picture3.png",
+      image: "picture/picture3.png",
       stats: { hp: 3, attack: 3, defense: 2, aaa: 2, bbb: 2, ccc: 4 }
     },
     evolution: {
       name: "萌芽鹿",
-      image: "/question/picture/picture4.png",
+      image: "picture/picture4.png",
       stats: { hp: 3, attack: 5, defense: 3, aaa: 3, bbb: 3, ccc: 5 }
     }
   };
   
   let currentForm = "base";
 
-  function evolve() {
-    if (currentForm === "base") {
-      currentForm = "evolution";
-      animateImageTransition(pokemonForms.evolution);
-    }
+function evolve() {
+  if (currentForm === "base") {
+    currentForm = "evolution";
+    animateImageTransition(pokemonForms.evolution);
+  } else {
+    alert("無法再進化");
   }
+}
 
-  function devolve() {
-    if (currentForm === "evolution") {
-      currentForm = "base";
-      animateImageTransition(pokemonForms.base);
-    }
+function devolve() {
+  if (currentForm === "evolution") {
+    currentForm = "base";
+    animateImageTransition(pokemonForms.base);
+  } else {
+    alert("無法再退化"); 
   }
+}
 
-  function animateImageTransition(form) {
-    const imageElement = document.getElementById("pokemon-image");
-    imageElement.style.opacity = 0;
+function animateImageTransition(form) {
+  const imageElement = document.getElementById("pokemon-image");
+  imageElement.style.opacity = 0;
+
+  setTimeout(() => {
+    updatePokemonInfo(form);
+    imageElement.style.opacity = 1;
+  }, 500);
+}
+
+function updatePokemonInfo(form) {
+  document.getElementById("pokemon-name").textContent = form.name;
+  document.getElementById("pokemon-image").src = form.image;
+
+  updateStat("pokemon-hp", form.stats.hp);
+  updateStat("pokemon-attack", form.stats.attack);
+  updateStat("pokemon-defense", form.stats.defense);
+  updateStat("pokemon-bbb", form.stats.bbb);
+  updateStat("pokemon-aaa", form.stats.aaa);
+  updateStat("pokemon-speed", form.stats.ccc);
+}
+
+function updateStat(elementId, newValue) {
+  const element = document.getElementById(elementId);
+  if (element.textContent != newValue) {
+    element.textContent = newValue;
+    element.classList.add("highlight");
 
     setTimeout(() => {
-      updatePokemonInfo(form);
-      imageElement.style.opacity = 1;
-    }, 500);
+      element.classList.remove("highlight");
+    }, 300);
   }
-
-  function updatePokemonInfo(form) {
-    document.getElementById("pokemon-name").textContent = form.name;
-    document.getElementById("pokemon-image").src = form.image;
-
-    updateStat("pokemon-hp", form.stats.hp);
-    updateStat("pokemon-attack", form.stats.attack);
-    updateStat("pokemon-defense", form.stats.defense);
-    updateStat("pokemon-bbb", form.stats.bbb);
-    updateStat("pokemon-aaa", form.stats.aaa);
-    updateStat("pokemon-speed", form.stats.ccc);
-  }
-
-  function updateStat(elementId, newValue) {
-    const element = document.getElementById(elementId);
-    if (element.textContent != newValue) {
-      element.textContent = newValue;
-      element.classList.add("highlight");
-      
-      setTimeout(() => {
-        element.classList.remove("highlight");
-      }, 300);
-    }
-  }
+}
 </script>
 
 </body>

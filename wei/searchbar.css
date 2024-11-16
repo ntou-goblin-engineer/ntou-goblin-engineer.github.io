@@ -1,0 +1,100 @@
+body {
+    background-color: #1e1e2f; 
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 50px;
+    margin: 0;
+}
+
+/* 搜索框 */
+#searchbar {
+    padding: 15px;
+    border-radius: 10px;
+    width: 30%;
+    transition: width 0.3s ease-in-out, box-shadow 0.3s;
+    font-size: 1.1em;
+    border: 2px solid #39c0ed; 
+    background-color: #2b2b40; 
+    color: #dfe6e9;
+}
+
+#searchbar::placeholder {
+    color: #757575;
+}
+
+#searchbar:focus {
+    width: 70%;
+    box-shadow: 0 4px 15px rgba(57, 192, 237, 0.6); 
+    outline: none;
+}
+
+/* 列表 */
+#list {
+    font-size: 1.5em;
+    margin: 30px auto;
+    padding: 0;
+    list-style-type: none;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+/* 列表 */
+.animals {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #39c0ed; 
+    background: linear-gradient(145deg, #2f2f45, #242435); 
+    padding: 12px 18px;
+    margin: 10px;
+    width: 180px; 
+    border-radius: 10px;
+    transition: transform 0.2s, background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    font-family: 'Arial', sans-serif;
+    text-align: center; 
+}
+
+.animals:hover {
+    transform: scale(1.05);
+    background: linear-gradient(145deg, #39c0ed, #7fdcdd); 
+    color: #1e1e2f;
+    box-shadow: 0 6px 12px rgba(57, 192, 237, 0.5);
+}
+
+/* 按鈕*/
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    background-color: #39c0ed;
+    color: #ffffff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(57, 192, 237, 0.4);
+}
+
+button:hover {
+    background-color: #2b9dcf;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(57, 192, 237, 0.6);
+}
+div.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+    margin-top: 20px;
+}
+.home{
+    position:fixed;
+    bottom: 10px;
+    right: 10px;
+
+}

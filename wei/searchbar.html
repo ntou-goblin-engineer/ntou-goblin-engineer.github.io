@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Creating Search Bar using HTML CSS and Javascript</title>
+    <script src="https://kit.fontawesome.com/ae5de2726d.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="searchbar.css">
+</head>
+<body>
+    <!-- input tag -->
+    <input id="searchbar" onkeydown="checkEnter(event)" type="text" name="search" placeholder="Search animals.."> 
+
+    <!-- ordered list -->
+    <ol id="list"> 
+        <li class="animals">Cat</li> 
+        <li class="animals">Dog</li> 
+        <li class="animals">Elephant</li> 
+        <li class="animals">Fish</li> 
+        <li class="animals">Gorilla</li> 
+        <li class="animals">Monkey</li> 
+        <li class="animals">Turtle</li> 
+        <li class="animals">Whale</li> 
+        <li class="animals">Aligator</li> 
+        <li class="animals">Donkey</li> 
+        <li class="animals">Horse</li> 
+    </ol>
+
+    <!-- CRUD Buttons -->
+    <div class="buttons-container">
+        <button onclick="addAnimal()">新增動物</button>
+        <button onclick="resetSearch()">重置搜索</button>
+    </div>
+    <p>點擊可以刪除</p>
+        <span class="home"><a href="自我介紹.html"><i class="fa-solid fa-arrow-left fa-2xl" style="color: #FFD43B;"></i></a></span>
+    <script src="searchbar.js"></script>
+</body>
+</html>
